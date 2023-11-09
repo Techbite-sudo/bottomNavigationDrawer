@@ -43,7 +43,18 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false">
+
+            <!-- Scrollable content -->
+
+        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -51,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@color/white"
+            style="@style/Widget.Material3.BottomAppBar"
             app:fabCradleMargin="10dp"
             app:fabCradleRoundedCornerRadius="50dp">
 
@@ -68,12 +80,15 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/white"
             android:src="@drawable/baseline_add_24"
-            app:layout_anchor="@id/bottomAppBar"
-            app:maxImageSize="40dp"
             android:id="@+id/fab"
-            app:tint="@color/lavender" />
+            app:maxImageSize="40dp"
+            app:tint="@color/lavender"
+            app:layout_behavior="com.google.android.material.bottomappbar.BottomAppBar$Behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
