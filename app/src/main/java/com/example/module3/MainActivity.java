@@ -61,24 +61,18 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.setOnItemSelectedListener(item -> {
-
-            switch (item.getItemId()) {
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
-                    break;
-                case R.id.shorts:
-                    replaceFragment(new ShortsFragment());
-                    break;
-                case R.id.subscriptions:
-                    replaceFragment(new SubscriptionFragment());
-                    break;
-                case R.id.library:
-                    replaceFragment(new LibraryFragment());
-                    break;
+            if (item.getItemId() == R.id.home) {
+                replaceFragment(new HomeFragment());
+            } else if (item.getItemId() == R.id.shorts) {
+                replaceFragment(new ShortsFragment());
+            } else if (item.getItemId() == R.id.subscriptions) {
+                replaceFragment(new SubscriptionFragment());
+            } else if (item.getItemId() == R.id.library) {
+                replaceFragment(new LibraryFragment());
             }
-
             return true;
         });
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
